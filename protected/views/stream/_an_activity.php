@@ -7,16 +7,14 @@
 ?>
 <div class="alert stream-item">
     <?php
-        $poll = "<span class='info_poll' data-poll_id='{$activity->poll_id}'>".
-            $activity->poll->createViewLink().'</span>';
-        $user = "<span class='info_user' data-profile_id='{$activity->user->profile_id}'>".
-            $activity->user->profile->createViewLink().'</span>';
+        $poll = $activity->poll->createViewLink();
+        $user = $activity->user->profile->createViewLink();
         switch ($activity->type) {
             case Activity::CREATE_POLL;
                 echo "{$user} created poll {$poll}.";
                 break;
             case Activity::ADD_CHOICE;
-                $choice = $activity->poll->createViewLink($activity->choice->content);
+                $choice = $activity->choice->content;
                 echo "{$user} added choice {$choice} for poll {$poll}.";
                 break;
             case Activity::CHANGE_POLL_TIME;
@@ -26,11 +24,11 @@
                 echo "{$user} changed settings of poll {$poll}.";
                 break;
             case Activity::VOTE;
-                $choice = $activity->poll->createViewLink($activity->choice->content);
+                $choice = $activity->choice->content;
                 echo "{$user} voted in poll {$poll} with {$choice}.";
                 break;
             case Activity::RE_VOTE;
-                $choice = $activity->poll->createViewLink($activity->choice->content);
+                $choice = $activity->choice->content;
                 echo "{$user} re-voted in poll {$poll} with {$choice}.";
                 break;
             case Activity::INVITE;

@@ -182,10 +182,10 @@ class ProfileController extends Controller
             if ($profile) {
                 echo json_encode($profile->attributes);
             } else {
-                throw new CHttpException(500, 'Internal Server Error.');
+                throw new CHttpException(403, 'Forbidden.');
             }
         } else {
-            throw new CHttpException(500, 'Internal Server Error.');
+            throw new CHttpException(403, 'Forbidden.');
         }
     }
 }

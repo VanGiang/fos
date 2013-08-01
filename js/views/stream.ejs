@@ -13,61 +13,43 @@
 %>
 <div id="stream_<%= id %>" class="alert alert-success stream-item" hidden="hidden">
     <% if (type == CREATE_POLL) { %>
-    <span class='info_user_new' data-profile_id='<%= profile_id %>'>
-    <%= user %> </span> created poll
-    <span class='info_poll_new' data-poll_id='<%= poll_id %>'>
-    <%= poll %> </span>
+    <%= user %> created poll 
+    <%= poll %>
     <% } %>
     <% if (type == ADD_CHOICE) { %>
-    <span class='info_user_new' data-profile_id='<%= profile_id %>'>
-    <%= user %> </span> added choice
+    <%= user %> added choice
     <%= choice_content %> for poll
-    <span class='info_poll_new' data-poll_id='<%= poll_id %>'>
-    <%= poll %> </span>
+    <%= poll %>
     <% } %>
     <% if (type == CHANGE_POLL_TIME) { %>
-    <span class='info_user_new' data-profile_id='<%= profile_id %>'>
-    <%= user %> </span> changed time settings of poll 
-    <span class='info_poll_new' data-poll_id='<%= poll_id %>'>
-    <%= poll %> </span>
+    <%= user %> changed time settings of poll 
+    <%= poll %>
     <% } %>
     <% if (type == CHANGE_POLL_SETTING) { %>
-    <span class='info_user_new' data-profile_id='<%= profile_id %>'>
-    <%= user %> </span> changed settings of poll 
-    <span class='info_poll_new' data-poll_id='<%= poll_id %>'>
-    <%= poll %> </span>
+    <%= user %> changed settings of poll 
+    <%= poll %>
     <% } %>
     <% if (type == VOTE) { %>
-    <span class='info_user_new' data-profile_id='<%= profile_id %>'>
-    <%= user %> </span> voted in poll
-    <span class='info_poll_new' data-poll_id='<%= poll_id %>'>
-    <%= poll %> </span> with 
+    <%= user %> voted in poll
+    <%= poll %> with
     <%= choice_content %>
     <% } %>
     <% if (type == RE_VOTE) { %>
-    <span class='info_user_new' data-profile_id='<%= profile_id %>'>
-    <%= user %> </span> re-voted in poll 
-    <span class='info_poll_new' data-poll_id='<%= poll_id %>'>
-    <%= poll %> </span> with 
+    <%= user %> re-voted in poll 
+    <%= poll %> with 
     <%= choice_content %>
     <% } %>
     <% if (type == INVITE) { %>
-    <span class='info_user_new' data-profile_id='<%= profile_id %>'>
-    <%= user %> </span> invited 
+    <%= user %> invited 
     <%= link_to(target_profile_name, 'index.php?r=profile/view&id='+target_profile_id) %> to vote in poll 
-    <span class='info_poll_new' data-poll_id='<%= poll_id %>'>
-    <%= poll %> </span>
+    <%= poll %>
     <% } %>
     <% if (type == COMMENT) { %>
-    <span class='info_user_new' data-profile_id='<%= profile_id %>'>
-    <%= user %> </span> commented in poll 
-    <span class='info_poll_new' data-poll_id='<%= poll_id %>'>
-    <%= poll %> </span>
+    <%= user %> commented in poll 
+    <%= poll %>
     <% } %>
     <% if (type == REPLY_COMMENT) { %>
-    <span class='info_user_new' data-profile_id='<%= profile_id %>'>
-    <%= user %> </span> replied a comment in poll 
-    <span class='info_poll_new' data-poll_id='<%= poll_id %>'>
-    <%= poll %> </span>
+    <%= user %> replied a comment in poll 
+    <%= poll %>
     <% } %>
 </div>

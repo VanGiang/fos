@@ -120,7 +120,6 @@ function showInfoPoll(poll_id, poll_class) {
             $(poll_class).SetBubblePopupInnerHtml(inner_html);
             localStorage.setItem('poll'+poll_id, inner_html);
         }).fail(function() {
-            alert('Fail!');
         });
     }
 }
